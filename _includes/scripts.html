@@ -1,0 +1,22 @@
+{% include google_analytics.html %}
+<script type="text/javascript" charset="utf-8">
+    document.onreadystatechange = function() {
+        if ( document.readyState == 'complete' ) {
+            var active = document.querySelector( 'header a.active' ).innerHTML.toLowerCase(),
+                links = document.querySelectorAll( 'header nav li a'),
+                selection = document.querySelector( 'header .nav-selection' ),
+                i, link;
+            for ( i = 0; i < links.length; i++ ) {
+                link = links[ i ];
+                console.log(link);
+                link.addEventListener( 'mouseover', function() {
+                    selection.className = 'nav-selection';
+                    selection.className = 'nav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    selection.className = 'nav-selection ' + active;
+                });
+            }
+        }
+    };
+</script>

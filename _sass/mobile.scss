@@ -1,0 +1,459 @@
+// This file contains shared base styles and will be loaded on all browsers and devices
+
+@import "http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,500,300italic,500italic|Ubuntu+Condensed";
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+$sansFamily: 'Ubuntu', Helvetica, Arial, sans-serif;
+$headingFamily: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
+$codeFamily: 'Ubuntu Mono', monospace;
+$white: #FFFFFF;
+$black: #111;
+$darkGrey: #222;
+$grey: #444;
+$lightGrey: #ccc;
+$blue: #6EC5FF;
+$indigo: #5EA5FF;
+
+html {
+    font-family: $sansFamily;
+    font-weight: 100;
+    margin: 0;
+    color: $grey;
+    font-size: 16px;
+}
+
+a {
+    color: $indigo;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+    color: $darkGrey;
+    font-family: $headingFamily;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    margin: 0.4em 0;
+    a {
+        color: inherit;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+iframe {
+  width: 100%;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h5.logo {
+    font-size: 1.6rem;
+}
+
+h1.hero {
+    font-size: 4.5rem;
+    margin: 0.3em 0 0.1em;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+.container {
+    @include outer-container;
+    max-width: 780px;
+    position: relative;
+}
+
+header a {
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+header nav ul {
+    font-size: 16px;
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+header nav ul li {
+    float: left;
+    a {
+        padding-right: 20px;
+    }
+}
+
+header nav.subnav {
+  z-index: 2;
+  margin: 7px 0 -40px;
+  position: absolute;
+  right: 0;
+}
+
+header .subnav a {
+  padding-right: 0;
+  padding-left: 20px;
+}
+
+header .nav-slider {
+    height: 3px;
+    background-color: $black;
+    position: relative;
+}
+
+header .nav-selection {
+    position: absolute;
+    height: 3px;
+    background-color: $blue;
+    @include transition-property (transform);
+    @include transition-duration(0.05s);
+    @include transition-timing-function(linear);
+}
+
+header .nav-selection.about {
+    width: 44px;
+    @include transform(translateX(108px));
+}
+
+header .nav-selection.posts {
+    width: 44px;
+    @include transform(translateX(50px));
+}
+header .nav-selection.blog {
+    width: 33px;
+    @include transform(translateX(0));
+}
+
+header .nav-selection.projects {
+    width: 59px;
+    @include transform(translateX(172px));
+}
+
+header .subnav-selection {
+  position: absolute;
+  height: 3px;
+  background-color: $black;
+  width: 50px;
+  @include transition-property (right);
+  @include transition-duration(0.05s);
+  @include transition-timing-function(linear);
+}
+
+header .subnav-selection.walkie-home {
+  right: 156px;
+  width: 42px;
+}
+
+header .subnav-selection.walkie-hubot {
+  right: 91px;
+  width: 44px;
+}
+
+header .subnav-selection.download {
+  right: 0;
+  width: 71px;
+}
+
+header .subnav-selection.vimdeck-home {
+  right: 53px;
+  width: 44px;
+}
+
+header .subnav-selection.vimdeck-docs {
+  right: 0px;
+  width: 34px;
+}
+
+header .subnav-selection.exemplar-home {
+  right: 145px;
+  width: 44px;
+}
+
+header .subnav-selection.exemplar-docs {
+  right: 91px;
+  width: 34px;
+}
+
+header .profile {
+    float: right;
+    height: 58px;
+    margin-top: 14px;
+}
+
+header .social {
+    width: 16px;
+    float: left;
+    margin-right: 10px;
+}
+
+header .social i {
+    display: block;
+    margin: 9px 0;
+}
+
+header .avatar, header .avatar-large {
+    height: 58px;
+    border: 2px solid $black;
+    float: left;
+    margin-left: 10px;
+    display: none;
+}
+
+header .avatar-large {
+    display: none;
+}
+
+footer {
+    font-size: 0.8rem;
+    margin-top: 30px;
+}
+
+footer ul {
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+footer nav {
+    border-width: 3px 0 0;
+    border-style: solid;
+    border-color: $black;
+    padding-top: 20px;
+}
+
+footer nav ul li {
+    @include span-columns(3);
+    @include media(max-width 40em) {
+        @include span-columns(12);
+        margin-bottom: 10px;
+        &:nth-child(2n) {
+          @include omega;
+        }
+    }
+}
+
+ul, ol {
+    line-height: 1.5em;
+    padding-left: 20px;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: square;
+}
+
+.post {
+    border-top: 1px solid $lightGrey;
+    margin-bottom: 5em;
+}
+
+.post:first-child {
+    border-top: none;
+}
+
+.post-header .date {
+    font-family: $sansFamily;
+    text-decoration: lowercase;
+    margin: 1.5em 0 -1.7em;
+}
+
+#projects {
+    margin-top: 40px;
+}
+
+.project {
+    display: block;
+    border: 1px solid $lightGrey;
+    margin-bottom: 2.35765%;
+    @include pad;
+    color: inherit;
+    &:hover {
+        border-color: $indigo;
+        text-decoration: none;
+    }
+}
+
+.project h2 {
+  font-size: 3rem;
+}
+
+.project:nth-child(2n) {
+    @include omega;
+}
+
+.pagination {
+    margin-top: 30px;
+}
+
+.button, .key-selector a {
+    background: $darkGrey;
+    color: $white;
+    padding: 0.4em 0;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: $headingFamily;
+    font-size: 1.2rem;
+}
+
+.key-selector {
+    margin-bottom: 1rem;
+}
+
+.key-selector a {
+    float: left;
+    padding: 0.5em 0.4em 0.4em;
+    margin-right: 0.4em;
+    font-family: $sansFamily;
+    font-size: 0.8rem;
+}
+
+.key-selector a.active {
+    background-color: $blue;
+}
+
+.button:hover, .button:active {
+    @include box-shadow(0 0 1px 2px rgba(0,0,0,1) inset);
+}
+
+.pagination .button span {
+    position: relative;
+}
+
+.pagination a.previous span:before {
+    content: "←";
+    position: absolute;
+    left: -1.5rem;
+}
+
+.pagination a.next span:after {
+    content: "→";
+    position: absolute;
+    left: 2.8rem;
+}
+
+pre, .highlight pre, .highlight code {
+    font-family: $codeFamily;
+    font-weight: normal;
+    word-wrap: normal;
+    font-size: 1rem;
+    line-height: 1.3em;
+}
+
+.chords {
+    color: $white;
+}
+
+.chords strong {
+    color: $blue;
+}
+
+.post img {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 29em) {
+    /*html {
+      font-size: 22px;
+    }*/
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+    }
+
+    h5 {
+        font-size: 2rem;
+    }
+
+    .project {
+        @include span-columns(6);
+        min-height: 13.1rem;
+    }
+
+    .pagination a {
+        @include span-columns(6);
+    }
+
+    header .avatar {
+        display: block;
+        @include hidpi(1.5) {
+            display: none;
+        }
+    }
+
+    header .avatar-large {
+        @include hidpi(1.5) {
+            display: block;
+        }
+    }
+
+    header .profile {
+        width: 124px;
+    }
+}

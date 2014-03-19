@@ -1,0 +1,54 @@
+<header>
+    <div class="container">
+        <div class="profile">
+            <div class="social">
+                <a href="https://github.com/ardoi">
+                    <i class="fa fa-github-alt"></i>
+                </a>
+                <a href="http://sysbio.ioc.ee/Members/ardo">
+                    <i class="fa fa-home"></i>
+                </a>
+            </div>
+            <div class="social">
+                <a href="https://twitter.com/ardo_i">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://bitbucket.org/ardoi">
+                    <i class="fa fa-bitbucket"></i>
+                </a>
+            </div>
+            <a target="_blank" href="/about">
+              <img src="{% include avatar_url %}?s=54" alt="avatar" class="avatar" />
+            </a>
+        </div>
+       
+        <h5 class="logo"><a href="/">Ardo Illaste</a></h5>
+        <nav>
+            <ul>
+                {% if page.nav == "blog" %}
+                    <li><a href="/" class="active">Blog</a></li>
+                {% else %}
+                    <li><a href="/">Blog</a></li>
+                {% endif %}
+                {% if page.nav == "posts" %}
+                <li><a href="/posts" class="active">Posts</a></li>
+                {% else %}
+                <li><a href="/posts">Posts</a></li>
+                {% endif %}
+                {% if page.nav == "about" %}
+                <li><a href="/about" class="active">About</a></li>
+                {% else %}
+                <li><a href="/about">About</a></li>
+                {% endif %}
+                {% if page.nav == "projects" %}
+                <li><a href="/projects" class="active">Projects</a></li>
+                {% else %}
+                <li><a href="/projects">Projects</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="nav-slider">
+            <div class="nav-selection {{ page.nav }}"></div>
+        </div>
+    </div>
+</header>
