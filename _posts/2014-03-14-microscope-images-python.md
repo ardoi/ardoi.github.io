@@ -4,7 +4,6 @@ layout: post
 comments: true
 ---
 
-## Huh?
 A few years ago I worked in a lab that had a Zeiss confocal microscope. My job was to conduct experiments and analyze images obtained in these experiments. The latter I like to do in Python, but to my surprise, no way to read Zeiss images into Python existed. Luckily for me, my supervisor had managed to obtain the specifcation for the Zeiss binary format. With the help of this sacred document I wrote a [reader for Zeiss files][1] and got on to analysing my data.
 
 Year later I'm in a different lab. Here the people have built a microscope of their own, but thankfully use TIFF format to save their files. At least there are [libraries][2] to read TIFF files in Python. Equipment and acquisition parameters were written as custom formatted text in the description field of the TIFF file. Parsing that was an order of magnitude easier than implementing a binary file reader. So a bit of tinkering but analysis is soon up and running. 
