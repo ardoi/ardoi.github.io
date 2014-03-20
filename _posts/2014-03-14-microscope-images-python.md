@@ -84,3 +84,4 @@ You might say that how is this different from the original problem of having to 
 [4]:http://downloads.openmicroscopy.org/bio-formats/5.0.0/
 [5]:http://www.openmicroscopy.org/site/support/bio-formats5/supported-formats.html
 [6]:http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2013-06/ome.html
+[7]:https://github.com/ardoi/pymimage

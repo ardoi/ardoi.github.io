@@ -223,6 +223,7 @@ header .social {
     width: 16px;
     float: left;
     margin-right: 10px;
+    margin-top: 5px;
 }
 
 header .social i {
@@ -232,7 +233,7 @@ header .social i {
 
 header .avatar, header .avatar-large {
     height: 58px;
-    border: 2px solid $orange;
+    /*border: 2px solid $orange;*/
     float: left;
     margin-left: 10px;
     display: none;
