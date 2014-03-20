@@ -1,14 +1,15 @@
 ---
-title: Read microscope images in Python?
+title: Python & microscope images
 layout: post
+nav: blog
 comments: true
 ---
 
 A few years ago I worked in a lab that had a Zeiss confocal microscope. My job was to conduct experiments and analyze images obtained in these experiments. The latter I like to do in Python, but to my surprise, no way to read Zeiss images into Python existed. Luckily for me, my supervisor had managed to obtain the specifcation for the Zeiss binary format. With the help of this sacred document I wrote a [reader for Zeiss files][1] and got on to analysing my data.
 
-Year later I'm in a different lab. Here the people have built a microscope of their own, but thankfully use TIFF format to save their files. At least there are [libraries][2] to read TIFF files in Python. Equipment and acquisition parameters were written as custom formatted text in the description field of the TIFF file. Parsing that was an order of magnitude easier than implementing a binary file reader. So a bit of tinkering but analysis is soon up and running. 
+Year later I'm in a different lab. Here the people have built a microscope of their own, but thankfully use TIFF format to save their files. At least there are [libraries][2] to read TIFF files in Python. Equipment and acquisition parameters were written as custom formatted text in the description field of the TIFF file. Parsing that was an order of magnitude easier than implementing a binary file reader. So a bit of tinkering but analysis was soon up and running. 
 
-Cue forward a few years and I'm now a postdoc in yet another lab. This place has an Olympus confocal microscope but no specification file for the binary blob that images get saved to. Even if I had the spec file, this would only solve a portion of the problem. The idea was to release some analysis software I was working on to the scientific community and it wouldn't really be very helpful if it could read one or two types of microscope images. Implementing binary readers for all would have required format spec files, sample data files and time, any of which I didn't have.
+Cue forward a few years and I'm now a postdoc in yet another lab. This place has an Olympus confocal microscope but no specification file for the binary blob that images get saved to. Even having the spec file  would only solve a part of the problem. We had the idea of releasing some analysis software to the scientific community and it wouldn't really be very helpful if it could only read one or two types of microscope images. Implementing binary readers for all would have required format spec files, sample data files and time, none of which I had.
 
 ## Java saves they day
 Turned out that reinventing the wheel was not necessary. The *de facto* ruler of image analysis tools for biosciences, [ImageJ][3], already had a way of reading in a [myriad of different commercial file formats][5]. It accomplishes this by using the [Bio-Formats plugin][4]. So, instead of trying to accommodate all possible file formats myselaf, it was way easier to use Bio-Formats which can convert any microscope image into [OME format][6] and then read that with Python.
@@ -52,8 +53,16 @@ And we have the data from our microscope image file! As you can see, the image d
 
 In case you have multiple images in a folder you can either load the entire folder with `imm.load_dir(...)` or a selection of files with `imm.load_files(...)`. File conversion for multiple file is executed in parallel so doing a whole bunch of files together will be a lot faster than running them one by one. 
 
-## How does it work
 
+##Getting it
+Clone from [github][7] and run the setup
+{% highlight bash %}
+git clone https://github.com/ardoi/pymimage.git
+python setup.py install
+{% endhighlight %}
+
+
+## How does it work
 This is not really important if you just want to load images but might not hurt to know.
 
 ###Conversion
@@ -74,4 +83,4 @@ You might say that how is this different from the original problem of having to 
 [3]:http://rsb.info.nih.gov/ij/
 [4]:http://downloads.openmicroscopy.org/bio-formats/5.0.0/
 [5]:http://www.openmicroscopy.org/site/support/bio-formats5/supported-formats.html
-
+[6]:http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2013-06/ome.html
