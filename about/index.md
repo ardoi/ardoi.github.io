@@ -1,25 +1,13 @@
 ---
 layout: default
 nav: about
-title: Hello
+title: Hi hi
 ---
-My name is Tyler Benziger. I am a web developer, father, and musician.
 
-I work at Adobe in San Francisco on a small team that focuses on validating and prototyping new
-ideas. The flexibility of my team has given me
-some amazing opportunities including working on projects like [jQuery
-Mobile](http://jquerymobile.com),
-[ThemeRoller](http://jquerymobile.com/themeroller), and [Muse](http://adobe.com/muse).
+I'm Ardo and at the moment I work as a postdoctoral fellow in the lovely [capital][1] of Switzerland. My current research deals with calcium handling in cardiac myocytes, but previously I've worked on a bunch of different cardiac related  [stuff][2]. 
 
-I have an amazing family, including my beautiful wife Amy, my
-two-year-old son, Brody, and a new baby girl, Grace.
+Python is my weapon of choice and I have a lot of fun using and writing tools for processing, analyzing and visualizing data. In this blog I try to write about some of the things I've had the pleasure of playing around with.
 
-I've been playing music for about 10 years. I dabble in a lot of different
-instruments but my true love is the electric guitar. I've played with
-some fellow musicians on a few different projects (mostly for fun), but
-my heart is in worship. I am apart of music ministry at a church called
-[LifePoint](http://lifepointoakdale.org) in Oakdale, CA and it's
-something about which I'm extremely passionate.
+[1]:http://www.physio.unibe.ch/
+[2]:http://sysbio.ioc.ee/Members/ardo
 
-This is my blog where you'll find my rantings usually surrounding these
-three topics.
