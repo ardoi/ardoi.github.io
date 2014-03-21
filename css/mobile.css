@@ -284,7 +284,7 @@ header .avatar, header .avatar-large {
   height: 58px;
   /*border: 2px solid $orange;*/
   float: left;
-  margin-left: 10px;
+  margin-right: 10px;
   display: none; }
 
 /* line 242, ../_sass/mobile.scss */
