@@ -58,9 +58,9 @@ In case you have multiple images in a folder you can either load the entire fold
 Clone from [github][7] and run the setup
 {% highlight bash %}
 git clone https://github.com/ardoi/pymimage.git
-python setup.py install
+pip install -e .
 {% endhighlight %}
-
+A zip archive of the package is also [available][8]. You'll need to have `numpy` installed. 
 
 ## How does it work
 This is not really important if you just want to load images but might not hurt to know.
@@ -69,7 +69,32 @@ This is not really important if you just want to load images but might not hurt 
 Each image is converted to OME with the Bio-Formats `bfconvert` tool. This means `java` needs to be installed on your machine (and it probably is). The conversion to OME takes a few seconds (or more, depending on the size of your image), but only has to be done **once**. Next time you load the same image the existing OME file will be read from the cache directory you specify when creating an ImageMaker  without having to perform the conversion again. The generated OME file is pure XML and can be parsed with standard Python libraries. 
 
 ###Format specific information
-In some cases you might want to read extra information from the file. For example, in linescan mode, LSM images store the time of acquisition for each line in an image. In OME files these are stored as annotations. For accessing this extra information it's possible to subclass the `CustomReader` class and define the function `_get_typespecific_extra_info`. In here anything extra can be read from the annotations. Right now readers for Zeiss, Olympus and VTI files exist. 
+In some cases you might want to read extra information from the file. For example, in linescan mode, LSM images store the time of acquisition for each line in an image. In OME files these are stored as annotations.
+{% highlight py %}
+{'ObjectiveLens NAValue': '1.2',
+ 'ObjectiveLens Name': 'UPLSAPO  60X W  NA:1.20',
+ 'PMTDetectingMode': 'Analog',
+ 'PMTVoltage': '700',
+ 'PinholeDiameter': '800000',
+ 'PinholeScale': '1',
+ 'Resolution': '10.0',
+ 'RotationValue': '0.0',
+ 'SamplingClock': '250000',
+ 'ScanSpeed': '4.0',
+ 'Time Per Frame': '24784272.000',
+ 'Time Per Line': '2472.000',
+ 'Time Per Pixel': '4.0',
+ 'Time Per Series': '24784272.000',
+ 'X Pinhole': '-143',
+ 'XPanValue': '-236',
+ 'Y Pinhole': '-447',
+ 'YPanValue': '209',
+ 'ZoomValue': '150',
+ ...etc...
+ }
+{% endhighlight %}
+
+For accessing this extra information consistently for each file format the `CustomReader` class can be subclassed. In the function `_get_typespecific_extra_info` anything extra can be read from the annotations and made available. Right now readers for Zeiss, Olympus and VTI files exist. 
 
 You might say that how is this different from the original problem of having to write separate readers for each file format? The big difference is that with the OME approach most, if not all, microscope file formats can be imported even without a specific `CustomReader`. The generic `OMEXMLReader` can get most of the important data out by itself. Only for some nonstandard stuff are these extra readers necessary. Also, it's orders of magnitude easier to figure out what to extract from an OME-XML file than trying to squeeze it out from a binary blob.
 
@@ -85,3 +110,4 @@ You might say that how is this different from the original problem of having to 
 [5]:http://www.openmicroscopy.org/site/support/bio-formats5/supported-formats.html
 [6]:http://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2013-06/ome.html
 [7]:https://github.com/ardoi/pymimage
+[8]:https://github.com/ardoi/pymimage/releases/tag/v0.1
