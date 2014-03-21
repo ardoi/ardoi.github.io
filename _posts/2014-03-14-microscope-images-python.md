@@ -71,7 +71,7 @@ Each image is converted to OME with the Bio-Formats `bfconvert` tool. This means
 ###Format specific information
 In some cases you might want to read extra information from the file. For example, in linescan mode, LSM images store the time of acquisition for each line in an image. In OME files these are stored as annotations. For accessing this extra information it's possible to subclass the `CustomReader` class and define the function `_get_typespecific_extra_info`. In here anything extra can be read from the annotations. Right now readers for Zeiss, Olympus and VTI files exist. 
 
-You might say that how is this different from the original problem of having to write separate readers for each file format? The big difference is that with the OME approach many microscope files can be read with or without a specific reader. The generic `OMEXMLReader` can get most of the important data out by itself. Only for some nonstandard stuff are these extra readers necessary. Also, it's orders of magnitude easier to figure out what to extract from an OME-XML file than trying to squeeze it out from a binary blob.
+You might say that how is this different from the original problem of having to write separate readers for each file format? The big difference is that with the OME approach most, if not all, microscope file formats can be imported even without a specific `CustomReader`. The generic `OMEXMLReader` can get most of the important data out by itself. Only for some nonstandard stuff are these extra readers necessary. Also, it's orders of magnitude easier to figure out what to extract from an OME-XML file than trying to squeeze it out from a binary blob.
 
 
 
