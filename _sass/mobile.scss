@@ -389,8 +389,10 @@ pre, .highlight pre, .highlight code {
 }
 
 .post img {
-  display: inline-block;
+  display: block;
   margin-bottom: 1em;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .video-container {

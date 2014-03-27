@@ -150,8 +150,11 @@ nav {
 img {
   border: 0;
   height: auto;
-  max-width: 100%;
+  max-width: 80%;
   -ms-interpolation-mode: bicubic;
+}
+img[alt="full"]{
+    max-width: 95%;
 }
 
 // Corrects overflow displayed oddly in IE9

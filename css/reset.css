@@ -126,71 +126,75 @@ nav ul, nav ol {
 img {
   border: 0;
   height: auto;
-  max-width: 100%;
+  max-width: 80%;
   -ms-interpolation-mode: bicubic; }
 
-/* line 158, ../_sass/reset.scss */
+/* line 156, ../_sass/reset.scss */
+img[alt="full"] {
+  max-width: 95%; }
+
+/* line 161, ../_sass/reset.scss */
 svg:not(:root) {
   overflow: hidden; }
 
-/* line 163, ../_sass/reset.scss */
+/* line 166, ../_sass/reset.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
-/* line 169, ../_sass/reset.scss */
+/* line 172, ../_sass/reset.scss */
 legend {
   border: 0;
   padding: 0;
   white-space: normal; }
 
-/* line 175, ../_sass/reset.scss */
+/* line 178, ../_sass/reset.scss */
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline; }
 
-/* line 182, ../_sass/reset.scss */
+/* line 185, ../_sass/reset.scss */
 button, input {
   line-height: normal; }
 
-/* line 186, ../_sass/reset.scss */
+/* line 189, ../_sass/reset.scss */
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button; }
 
-/* line 192, ../_sass/reset.scss */
+/* line 195, ../_sass/reset.scss */
 button[disabled], input[disabled] {
   cursor: default; }
 
-/* line 196, ../_sass/reset.scss */
+/* line 199, ../_sass/reset.scss */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
-/* line 201, ../_sass/reset.scss */
+/* line 204, ../_sass/reset.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
-/* line 209, ../_sass/reset.scss */
+/* line 212, ../_sass/reset.scss */
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none; }
 
-/* line 215, ../_sass/reset.scss */
+/* line 218, ../_sass/reset.scss */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 220, ../_sass/reset.scss */
+/* line 223, ../_sass/reset.scss */
 textarea {
   overflow: auto;
   vertical-align: top; }
 
-/* line 226, ../_sass/reset.scss */
+/* line 229, ../_sass/reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
