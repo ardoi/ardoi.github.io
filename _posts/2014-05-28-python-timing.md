@@ -98,6 +98,8 @@ This gives the output:
 
 So we get the timing info for all functions that have the `time_it` decorator and the order of execution. It's easy to modify this to also print the arguments each function gets called with and/or print the return value of each function call. Adding/removing timing for a function is just a matter of adding/removing the decorator.
 
+The IPython notebook for this post is available [here][2]
 
 [1]:https://docs.python.org/2/library/timeit.html
+[2]:http://nbviewer.ipython.org/github/ardoi/gh_blog/blob/master/img/timer/timer.ipynb
 
