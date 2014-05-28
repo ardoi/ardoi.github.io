@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Timing (nested) function executions in Python"
+title: "Timing (nested) function calls in Python"
 ---
 
 Supposed you quickly want to find out how much time a bunch of functions in your code take to execute. You could use the [timeit][1] module Python comes with. With this you either have to run from command line or provide the statement to execute as a string. 
