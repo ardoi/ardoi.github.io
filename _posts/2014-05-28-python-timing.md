@@ -28,11 +28,11 @@ def time_it(f):
     def tt(*args, **kwargs):
         time_it.active += 1
         t0 = time.time()
-        tabs = '\t'*(time_it.active - 1)+'>'
+        tabs = '\t'*(time_it.active - 1)
         name = f.__name__
-        print('{tabs} Executing {name}'.format(tabs=tabs, name=name))
+        print('{tabs}Executing <{name}>'.format(tabs=tabs, name=name))
         res = f(*args, **kwargs)
-        print('{tabs} Function {name} execution time: {time:.3f} seconds'.format(
+        print('{tabs}Function <{name}> execution time: {time:.3f} seconds'.format(
             tabs=tabs, name=name, time=time.time() - t0))
         time_it.active -= 1
         return res
@@ -75,28 +75,30 @@ In this contrived example, we're applying a gaussian blur to some data. The func
 This gives the output:
 
 {% highlight py %}
-> Executing do_all
-	> Executing process
-		> Executing get_stats
-		> Function get_stats execution time: 0.212 seconds
-	> Function process execution time: 0.329 seconds
-	> Executing process
-		> Executing get_stats
-		> Function get_stats execution time: 0.237 seconds
-	> Function process execution time: 3.095 seconds
-	> Executing process
-		> Executing get_stats
-		> Function get_stats execution time: 0.225 seconds
-	> Function process execution time: 4.861 seconds
-	> Executing process
-		> Executing get_stats
-		> Function get_stats execution time: 0.243 seconds
-	> Function process execution time: 6.609 seconds
-> Function do_all execution time: 14.894 seconds
+Executing <do_all>
+	Executing <process>
+		Executing <get_stats>
+		Function <get_stats> execution time: 0.229 seconds
+	Function <process> execution time: 0.350 seconds
+	Executing <process>
+		Executing <get_stats>
+		Function <get_stats> execution time: 0.244 seconds
+	Function <process> execution time: 3.261 seconds
+	Executing <process>
+		Executing <get_stats>
+		Function <get_stats> execution time: 0.224 seconds
+	Function <process> execution time: 5.048 seconds
+	Executing <process>
+		Executing <get_stats>
+		Function <get_stats> execution time: 0.278 seconds
+	Function <process> execution time: 6.958 seconds
+Function <do_all> execution time: 15.617 seconds
 {% endhighlight %}
 
 
-So we get the timing info for all functions that have the `time_it` decorator and the order of execution. It's easy to modify this to also print the arguments each function gets called with and/or print the return value of each function call. Adding/removing timing for a function is just a matter of adding/removing the decorator.
+So we get the timing info for all functions that have the `time_it` decorator and the order of execution. As can be expected, when the blurring amount increases, so does execution time. On the other hand, the time it takes to calculate the stats on the blurred array doesn't change. 
+
+It's easy to modify this to also print the arguments each function gets called with and/or print the return value of each function call. Adding/removing timing for a function is just a matter of adding/removing the decorator.
 
 The IPython notebook for this post is available [here][2]
 
