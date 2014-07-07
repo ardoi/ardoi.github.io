@@ -1,12 +1,15 @@
 // This file contains shared base styles and will be loaded on all browsers and devices
 
-@import "http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,500,300italic,500italic|Ubuntu+Condensed";
+//@import "http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,500,300italic,500italic|Ubuntu+Condensed";
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic&subset=latin,greek);
+//@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic&subset=latin,greek);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|Yanone+Kaffeesatz:400|Inconsolata);
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
-$sansFamily: 'Ubuntu', Helvetica, Arial, sans-serif;
-$headingFamily: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
-$codeFamily: 'Ubuntu Mono', monospace;
+$sansFamily: 'Noto Sans', Helvetica, Arial, sans-serif;
+$headingFamily: 'Yanone Kaffeesatz', Helvetica, Arial, sans-serif;
+$codeFamily: 'Inconsolata', monospace;
 $white: #FFFFFF;
 $black: #111;
 $darkGrey: #222;
@@ -18,7 +21,7 @@ $orange: #EE7621;
 
 html {
     font-family: $sansFamily;
-    font-weight: 100;
+    font-weight: 400;
     margin: 0;
     color: $grey;
     font-size: 16px;
@@ -36,8 +39,8 @@ a:hover {
 h1, h2, h3, h4, h5 {
     color: $darkGrey;
     font-family: $headingFamily;
-    font-weight: normal;
-    letter-spacing: -0.05em;
+    font-weight: 400;
+    //letter-spacing: -0.05em;
     margin: 0.4em 0;
     a {
         color: inherit;
@@ -57,15 +60,15 @@ video {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 h4 {
