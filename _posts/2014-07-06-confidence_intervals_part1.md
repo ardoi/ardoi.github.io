@@ -79,13 +79,13 @@ Comparing the CI obtained with the two approaches it's clear that the asymptotic
 ![](/img/ftest/ci_compare.png)
 
 ## Summary
-The good news is that the approximate method is still valid in many cases when the data is not quite as ambiguous as above:
+The good news is that the approximate method is still valid in many cases when the data is not quite as ambiguous as in the example above. Below the noise level is considerably lower and no points are removed from the beginning:
 ![](/img/ftest/raw_data_close.png)
-both methods yield comparable results:
+In this case both methods yield comparable results:
 ![](/img/ftest/ci_compare_close.png)
 Note that the vertical scale on the right panel is almost 8 times smaller than in the more noisy case above.
 
-Take home message is: if you get large CI using optimizers in Python or R then you might want to try an alternative approach to double check it.
+Take home message is: if you get a large CI from the optimizer you might want to try an alternative approach to double check it.
 
 In the future I will discuss how to use the F-ratio method for finding CIs for multiple parameter non-linear fits.
 
