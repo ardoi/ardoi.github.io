@@ -1,7 +1,8 @@
 ---
-title: Confidence intervals for non-linear fitting
+title: Non-linear fit confidence intervals
 layout: post
 nav: blog
+thumb: /img/ftest/thumb.png
 comments: true
 ---
 
@@ -87,7 +88,7 @@ Note that the vertical scale on the right panel is almost 8 times smaller than i
 
 Take home message is: if you get a large CI from the optimizer you might want to try an alternative approach to double check it.
 
-In the future I will discuss how to use the F-ratio method for finding CIs for multiple parameter non-linear fits.
+In the future I will discuss how to use the F-ratio method for finding CIs for multiple parameter non-linear fits. I'll also upload the IPython notebook with the Python code.
 
 
 
