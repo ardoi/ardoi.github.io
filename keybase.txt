@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/ardo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ardoi.github.io
+  * I am ardo (https://keybase.io/ardo) on keybase.
+  * I have a public key with fingerprint 12DE 1E83 76FF 478A 1582  B5EA 3DC7 81C4 4664 2EF9
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "12de1e8376ff478a1582b5ea3dc781c446642ef9",
+            "host": "keybase.io",
+            "key_id": "3dc781c446642ef9",
+            "uid": "06088679375ff0d13e8d24fba3d19300",
+            "username": "ardo"
+        },
+        "service": {
+            "hostname": "ardoi.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1414612519,
+    "expire_in": 157680000,
+    "prev": "edb09d3165efe5d15279d1776fdca5e63ffd0fad5b6aabeff43e3b40141f4de7",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yMHkAnicbVFdSBRRGJ21LVNYKbINUTBukC+2zez87lYkFopLUJZlUbnO7L2zDurM
+OjvrKrIRahYhkWwQiBa4hJVtkSgaFZqWUKlJYgpRZPaQQVBBYWXUHSvoofvycc93
+vnO+n/u2ZUSyJSsl9iBhXypneTz4MUQUFeZl1QFJg7XAXQfK0VKQFdWP9ICuqAZw
+A8oJEYUEmudkmeEFkWIFp8QikYY+XqB8DMNxjBPJLpANyrSgWYFlJDGIHIqGMfzx
+KhCj/+GHlhIkRwoCx7tonpVlElI0EqCTkSXsQLlokjSJQaSrYiXCbFGHGohkA4xU
+Kz5k9mva/pNVHH7FKAtJv/0DumZoPq0CJ8sMIxB0m8VGbcBkh5Hk/aPjlRQV4rlx
+RTXSg4qmAjeFmT5DMYUphmI4yslSrmyAagKKjryKyWB5TiDxM31QNZZEUCJdkKY4
+FsmIhRTr5F2Q4vHyoE9kEUfLMiRlEbISJ4oSwiulES0xJDaQGYh4YE5WpWrAzeA2
+RT+WDCp+VTRCOgKRocEjVsKSTKxYnmBejkhOWvX3nrlDiT8L+zfPz62cWO2Zshec
+PzcX9+y/2Thi3dOZ1v4KRL+EkXe875K98f22SHNx74nRWzUH1qzdPVNYf7orNlaQ
+WtoW67gbbyx6N2oNEDuG01Gc+LolPPD6UJKtdaHz4OzGyIB+I2/qqq07nhjtfjpd
+NcPsLXgRfb4d3gsOb+r9PvCpKWRdZFvaymUhZ7Zr5+f5R+tCldP1MxMbPG8dR/mR
+Zpda0pSR3yu+yc1csO0qzrD3dXQkT2w9m8b1rE9psQyOX5j84Hl2po34Zmn48SR8
+0biSnt9++6Wjy1GKeo4fzmy9/LA/PzZ959Sie+haQ5O9P4eJMpPlJ8eOlVZkXS/J
+YH8BjjMRsA==
+=rGae
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ardo
+
+==================================================================
